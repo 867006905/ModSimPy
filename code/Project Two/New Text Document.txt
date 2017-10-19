@@ -1,0 +1,19 @@
+make_system(T_init = 90, r = 0.01, volume = 300, t_end = 30)
+	T_env,	t0, t_end, dt
+	//return a system for either milk or coffee that consists of an initial state (temp = T_init)
+
+update(state, system)
+	//return a state updated according to Newton's Cooling
+
+run_simulation(system, update_func)
+	//run the simulation with a given update function
+
+mix(s1, s2)
+	//check whether s1.t_end == s2.t_end; if so, return a system that has mixed up the s1 and s2
+
+run_and_mix(t_add, t_total = 30)
+	//make a coffee and a milk system, run_simulation() on both until t_add, then run_simulation on mix() at t_add. Return the final temperature in the end
+
+error_func1(r)
+	//check the difference of the final temperature from 70. Can be used with fsolve() to approximate the true r
+
